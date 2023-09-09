@@ -1,19 +1,107 @@
 :root {
     --pink-color: #fecdd3;
+    --gray-color: #d3dce9;
 }
 
 body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+img[src*="icons"] {
+    width: 25px;
+}
+
+img[src*="profile-pictures"] {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
 }
 
 .header {
     grid-column: 2;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 40px 60px;
+    gap: 35px 25px;
+
+    padding: 15px 60px;
+    box-shadow: 0 5px 5px rgb(220, 220, 220);
+}
+
+
+.header :is(.profile-container, .search-container)  {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header .profile-container {
+    justify-content: end;
+}
+
+.profile-container h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.search-container input {
+    flex: 1;
+
+    background-color: var(--gray-color);
+    border: none;
+    border-radius: 30px / 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+.header .welcome-container {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.welcome-container img {
+    grid-row: span 2;
+
+    width: 60px;
+    height: 60px;
+}
+
+.welcome-container p {
+    font-weight: bold;
+    font-size: 0.8rem;
+    
+    align-self: end;
+}
+
+.welcome-container h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    align-self: center;
+}
+
+.header .btn-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: right;
+}
+
+.btn-container button {
+    background-color: var(--pink-color);
+    border: none;
+    border-radius: 20px / 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.7em 2em;
 }
 
 .sidebar {
@@ -27,24 +115,24 @@ body {
     padding: 15px 60px 15px 15px;    
 }
 
-.sidebar .logo, .main-links a, .secondary-links a {
+.sidebar .logo a, .main-links a, .secondary-links a {
     display: grid;
     grid-template-columns: 1fr 3fr;
     align-items: center;
     gap: 15px;
 }
 
-.sidebar .logo {
+.sidebar .logo a {
     gap: 10px;
 }
 
-.logo h3 {
+.sidebar .logo h3 {
     font-size: 1.3rem;
     font-weight: bold;
 }
 
-.logo img {
-    height: 40px;
+.sidebar .logo a img {
+    width: 40px;
 }
 
 .sidebar a {
@@ -55,7 +143,7 @@ body {
     line-height: 2rem;
 }
 
-.sidebar a img {
+.sidebar :not(.logo) a img {
     height: 25px;
 
     justify-self: center;
