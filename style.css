@@ -1,0 +1,18 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+}
+
+.header {
+    grid-column: 2;
+}
+
+.sidebar {
+    grid-row: 1 / span 2;
+}
+
+.content {
+    grid-column: 2;
+}
+
