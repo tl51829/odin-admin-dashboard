@@ -1,3 +1,11 @@
+:root {
+    --pink-color: #fecdd3;
+}
+
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -10,6 +18,47 @@
 
 .sidebar {
     grid-row: 1 / span 2;
+
+    display: grid;
+    align-content: start;
+    gap: 40px;
+
+    background-color: var(--pink-color);
+    padding: 15px 60px 15px 15px;    
+}
+
+.sidebar .logo, .main-links a, .secondary-links a {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.sidebar .logo {
+    gap: 10px;
+}
+
+.logo h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.sidebar a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.sidebar a img {
+    height: 25px;
+
+    justify-self: center;
 }
 
 .content {
